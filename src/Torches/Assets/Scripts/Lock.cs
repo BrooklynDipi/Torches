@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyPickup : MonoBehaviour
+public class Lock : MonoBehaviour
 {
-    public bool isKeyPickedUp;
-    public static int Keys;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +18,13 @@ public class KeyPickup : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
-            Keys++;
+            if(KeyPickup.Keys >= 1)
+            {
+                KeyPickup.Keys--;
+                ScoreManager.levelWin = true;
+            }
         }
     }
 }
