@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour
     {
         timeLeft = 90;
         oilTimeLeft = 0;
+        levelWin = false;
 
     }
 
