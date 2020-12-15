@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lock : MonoBehaviour
+public class Puddle : MonoBehaviour
 {
+    public int puddlePowerDown;
+
+    void Start()
+    {
+        puddlePowerDown = 10;
+    }
+
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.name == "Scary Baby")
         {
-            if(KeyPickup.Keys >= 1)
-            {
-                KeyPickup.Keys--;
-                ScoreManager.levelWin = true;
-            }
+            ScoreManager.timeLeft -= puddlePowerDown;
+
         }
     }
 }

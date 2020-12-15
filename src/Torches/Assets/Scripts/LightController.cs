@@ -4,41 +4,28 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour
 {
-    public GameObject light;
+    public GameObject lightLayer;
 
-    public int oilPowerUp;
-    public int lfPowerUp;
-
-    public Vector3 scaleTransform;
     public Vector3 standardScaleTransform;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        standardScaleTransform = new Vector3(1.5f, 1.5f, 1f);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (ScoreManager.oilTimerStart == false)
+        if (ScoreManager.oilTimerOn == false)
         {
-            light.transform.localScale = standardScaleTransform;
+            changeLightLayerScale(standardScaleTransform);
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    public void changeLightLayerScale(Vector3 newScale)
     {
-        if(col.gameObject.tag == "Oil")
-        {
-            ScoreManager.oilTimeLeft =+ oilPowerUp;
-            ScoreManager.oilTimerStart = true;
-            light.transform.localScale = scaleTransform;
-        }
-
-        if (col.gameObject.tag == "Lighter Fluid")
-        {
-            ScoreManager.timeLeft = ScoreManager.timeLeft + lfPowerUp;
-        }
+        lightLayer.transform.localScale = newScale;
     }
+
+    //array of items allowing it to be lit
+
 }

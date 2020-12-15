@@ -718,9 +718,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 498840054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11f60ff5a3f4e545be51e3c8560c009, type: 3}
+  m_Script: {fileID: 11500000, guid: d5f54af3472fd014bb5e07b072cd7460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lfPowerUp: 30
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,8 +947,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -599.5, y: 346.2}
-  m_SizeDelta: {x: 806.6231, y: 57.86975}
+  m_AnchoredPosition: {x: 21.000046, y: 171.7}
+  m_SizeDelta: {x: 806.6231, y: 28.877022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567509361
 MonoBehaviour:
@@ -970,7 +971,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1024,8 +1025,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -599.5, y: 403.3}
-  m_SizeDelta: {x: 806.6231, y: 56.335693}
+  m_AnchoredPosition: {x: 21.000046, y: 200.86}
+  m_SizeDelta: {x: 806.6231, y: 29.45295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630421199
 MonoBehaviour:
@@ -1048,10 +1049,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1274,7 +1275,7 @@ GameObject:
   - component: {fileID: 1281295254}
   - component: {fileID: 1281295255}
   m_Layer: 0
-  m_Name: light3
+  m_Name: lightLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1395,7 +1396,7 @@ PrefabInstance:
     - target: {fileID: 7464718118303500597, guid: ee06745b1de0c4148ae4b9dc4297e0bb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7464718118303500597, guid: ee06745b1de0c4148ae4b9dc4297e0bb,
         type: 3}
@@ -1507,7 +1508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515734069}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.29, y: 3.9, z: 6.1537094}
+  m_LocalPosition: {x: -4.8197308, y: 3.9, z: 6.1537094}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1998345783}
@@ -1587,7 +1588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1614,7 +1615,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1917,8 +1918,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -599.5, y: 288.88}
-  m_SizeDelta: {x: 806.6231, y: 56.76776}
+  m_AnchoredPosition: {x: 21, y: 143.07}
+  m_SizeDelta: {x: 806.6231, y: 28.391876}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987085122
 MonoBehaviour:
@@ -1941,7 +1942,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2117,9 +2118,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2011662633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11f60ff5a3f4e545be51e3c8560c009, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ba9cdfb463591b44b00169cd16b78d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oilPowerUp: 30
+  lightScaleTransformOil: {x: 2, y: 2, z: 1}
+  PlayerLightController: {fileID: 2066843430}
 --- !u!1 &2024210930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,7 +2232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045641201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.29, y: -1.586, z: 6.1537094}
+  m_LocalPosition: {x: -4.8197308, y: -1.586, z: 6.1537094}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1998345783}
@@ -2527,10 +2531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c9adf9de9832b42bf7a6fa2ed1c7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 1281295253}
-  oilPowerUp: 10
-  lfPowerUp: 30
-  scaleTransform: {x: 3, y: 3, z: 0}
+  lightLayer: {fileID: 1281295253}
   standardScaleTransform: {x: 1.5, y: 1.5, z: 1}
 --- !u!1 &2077728537
 GameObject:
@@ -2668,7 +2669,7 @@ PrefabInstance:
     - target: {fileID: 7464718118303500597, guid: ee06745b1de0c4148ae4b9dc4297e0bb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.382
+      value: -5.2681236
       objectReference: {fileID: 0}
     - target: {fileID: 7464718118303500597, guid: ee06745b1de0c4148ae4b9dc4297e0bb,
         type: 3}

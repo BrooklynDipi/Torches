@@ -7,46 +7,80 @@ public class ScoreManager : MonoBehaviour
 {
     public static float timeLeft;
     public static float oilTimeLeft;
-    public Text timerText, oilTimer, keyText;
+    public Text timerText, oilTimer, keyText, statusText;
 
-    public static bool oilTimerStart;
+    public static bool oilTimerOn;
+
     public static bool levelWin;
+    public static bool levelStarted;
+    public static bool levelLost;
 
-    // Start is called before the first frame update
     void Start()
     {
         timeLeft = 90;
         oilTimeLeft = 0;
         levelWin = false;
+        levelStarted = false;
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         keyText.text = "Keys: " + KeyPickup.Keys.ToString();
+        timerText.text = "Time Remaining: " + ScoreManager.timeLeft.ToString();
+        oilTimer.text = "Oil Burn Remaining: " + ScoreManager.oilTimeLeft.ToString();
 
-        if (timeLeft > 0)
+        if (!levelStarted)
         {
-            timeLeft -= Time.deltaTime;
-            timerText.text = "Time Remaining: " + ScoreManager.timeLeft.ToString();
+            statusText.text = "Press 1 to start!";
+
+            if (Input.GetKeyDown("1"))
+            {
+                levelStarted = true;
+            }
         }
 
-        if (oilTimerStart)
+        if (levelStarted && timeLeft > 0)
+        {
+            statusText.text = "";
+            timeLeft -= Time.deltaTime;
+        }
+
+        if (oilTimerOn)
         {
             oilTimeLeft -= Time.deltaTime;
-            oilTimer.text = "Oil Burn Remaining: " + ScoreManager.oilTimeLeft.ToString();
         }
 
         if (oilTimeLeft <= 0)
         {
             oilTimeLeft = 0;
-            oilTimerStart = false;
+            oilTimerOn = false;
         }
 
         if (levelWin)
         {
-            SceneManager.LoadScene("Menu");
+            statusText.text = "You've won! Press 1 to return to level select!";
+
+            if (Input.GetKeyDown("1"))
+            {
+                SceneManager.LoadScene("Menu");
+            }
+        }
+
+        if (levelLost)
+        {
+            statusText.text = "You've lost! Press 1 to return to level select!";
+
+            if (Input.GetKeyDown("1"))
+            {
+                SceneManager.LoadScene("Menu");
+            }
+        }
+
+        if (timeLeft <= 0)
+        {
+            levelLost = true;
+            timeLeft = 0;
         }
     }
 }

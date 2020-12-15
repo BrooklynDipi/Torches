@@ -8,42 +8,52 @@ public class menuLogic : MonoBehaviour
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject creditsMenu;
     [SerializeField] GameObject levelSelect;
-    [SerializeField] GameObject optionsMenu;
+    [SerializeField] GameObject Torch;
 
-    public void ShowMainMenu()
+    public void Awake()
     {
+        Torch.SetActive(true);
         mainMenu.SetActive(true);
         creditsMenu.SetActive(false);
         levelSelect.SetActive(false);
-        optionsMenu.SetActive(true);
+    }
+
+    public void ShowMainMenu()
+    {
+        Torch.SetActive(true);
+        mainMenu.SetActive(true);
+        creditsMenu.SetActive(false);
+        levelSelect.SetActive(false);
     }
 
     public void ShowCreditsMenu()
     {
+        Torch.SetActive(false);
         mainMenu.SetActive(false);
         creditsMenu.SetActive(true);
         levelSelect.SetActive(false);
-        optionsMenu.SetActive(true);
     }
     public void ShowLevelSelect()
     {
+        Torch.SetActive(false);
         mainMenu.SetActive(false);
         creditsMenu.SetActive(false);
         levelSelect.SetActive(true);
-        optionsMenu.SetActive(true);
-    }
-
-    public void ShowOptionsMenu()
-    {
-        mainMenu.SetActive(false);
-        creditsMenu.SetActive(false);
-        levelSelect.SetActive(false);
-        optionsMenu.SetActive(true);
     }
 
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("Test level");
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("Level 2");
+    }
+
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene("Level 3");
     }
 
     public void Quit()
